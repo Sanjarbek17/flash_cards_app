@@ -1,3 +1,4 @@
+import 'package:flash_cards_app/core/constants/custom_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Text('Hello World'),
+      onGenerateRoute: CustomRouter.generateRoute,
+      initialRoute: CustomRouter.home,
     );
   }
 }
