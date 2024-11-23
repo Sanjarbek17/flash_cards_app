@@ -1,4 +1,5 @@
 import 'package:flash_cards_app/core/constants/custom_router.dart';
+import 'package:flash_cards_app/core/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: theme,
       onGenerateRoute: CustomRouter.generateRoute,
       initialRoute: CustomRouter.home,
     );
