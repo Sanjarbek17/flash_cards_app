@@ -48,12 +48,12 @@ class CustomTextTheme {
   );
 
   static const flashTextStyle = TextStyle(
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: FontWeight.w500,
     color: CustomColors.textColorBlue,
   );
   static const flashSubTextStyle = TextStyle(
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: FontWeight.w300,
     color: CustomColors.textColorBlue,
   );
