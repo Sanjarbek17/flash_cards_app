@@ -11,4 +11,10 @@ extension TextThemeExtension on BuildContext {
   TextStyle get textButtonTextStyle => CustomTextTheme.textButtonTextStyle;
   TextStyle get categoryTextStyle => CustomTextTheme.categoryTextStyle;
   TextStyle get categoryTitleTextStyle => CustomTextTheme.categoryTitleTextStyle;
+  TextStyle get flashTextStyle => CustomTextTheme.flashTextStyle;
+  TextStyle get flashSubTextStyle => CustomTextTheme.flashSubTextStyle;
+  TextStyle get accountTextStyle => CustomTextTheme.accountTextStyle;
+  TextStyle get accountSubTextStyle => CustomTextTheme.accountSubTextStyle;
+  TextStyle get accountBodyTextStyle => CustomTextTheme.accountBodyTextStyle;
+  TextStyle get accountBodySubTextStyle => CustomTextTheme.accountBodySubTextStyle;
 }

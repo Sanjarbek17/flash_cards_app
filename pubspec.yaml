@@ -38,6 +38,7 @@ dependencies:
   awesome_extensions: ^2.0.19
   flutter_svg: ^2.0.15
   carousel_slider: ^5.0.0
+  syncfusion_flutter_charts: ^27.2.3
 
 dev_dependencies:
   flutter_test:

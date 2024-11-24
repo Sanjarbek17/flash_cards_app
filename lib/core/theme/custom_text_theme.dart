@@ -23,16 +23,19 @@ class CustomTextTheme {
     fontWeight: FontWeight.w300,
     color: CustomColors.textColorBlue,
   );
+
   static const cardTitleTextStyle = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w500,
     color: CustomColors.textColorBlue,
   );
+
   static const textButtonTextStyle = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500,
     color: CustomColors.white,
   );
+
   static const categoryTextStyle = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w500,
@@ -42,5 +45,38 @@ class CustomTextTheme {
     fontSize: 40,
     fontWeight: FontWeight.w500,
     color: CustomColors.white,
+  );
+
+  static const flashTextStyle = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    color: CustomColors.textColorBlue,
+  );
+  static const flashSubTextStyle = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w300,
+    color: CustomColors.textColorBlue,
+  );
+
+  static const accountTextStyle = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: CustomColors.textColorWhite,
+  );
+  static const accountSubTextStyle = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w300,
+    color: CustomColors.textColorWhite,
+  );
+
+  static const accountBodyTextStyle = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    color: CustomColors.textColorBlue,
+  );
+  static const accountBodySubTextStyle = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: CustomColors.textColorBlue,
   );
 }

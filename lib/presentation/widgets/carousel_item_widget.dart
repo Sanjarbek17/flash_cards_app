@@ -106,7 +106,7 @@ class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProv
               child: Transform.flip(
                 flipY: isFlipped,
                 child: Transform.rotate(
-                  angle: math.pi / 2,
+                  angle: -math.pi / 2,
                   child: const Icon(
                     Icons.arrow_back_ios_outlined,
                     color: CustomColors.primaryColor,
