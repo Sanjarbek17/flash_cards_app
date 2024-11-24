@@ -1,4 +1,5 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
+import 'package:flash_cards_app/core/constants/custom_router.dart';
 import 'package:flash_cards_app/core/extension/text_theme_extension.dart';
 import 'package:flash_cards_app/core/theme/custom_colors.dart';
 import 'package:flash_cards_app/gen/assets.gen.dart';
@@ -113,9 +114,12 @@ class HomeScreen extends StatelessWidget {
                 mainAxisSpacing: 15,
               ),
               itemCount: 6,
-              itemBuilder: (context, index) => const CategoryCard(
-                icon: Icon(Icons.calculate, color: CustomColors.primaryColor, size: 50),
+              itemBuilder: (context, index) => CategoryCard(
+                icon: const Icon(Icons.calculate, color: CustomColors.primaryColor, size: 50),
                 title: 'Mathematics',
+                onTap: () {
+                  Navigator.of(context).pushNamed(CustomRouter.flashcard);
+                },
               ),
             ),
           ),
