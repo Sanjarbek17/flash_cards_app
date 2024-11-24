@@ -10,4 +10,5 @@ extension TextThemeExtension on BuildContext {
   TextStyle get cardTitleTextStyle => CustomTextTheme.cardTitleTextStyle;
   TextStyle get textButtonTextStyle => CustomTextTheme.textButtonTextStyle;
   TextStyle get categoryTextStyle => CustomTextTheme.categoryTextStyle;
+  TextStyle get categoryTitleTextStyle => CustomTextTheme.categoryTitleTextStyle;
 }

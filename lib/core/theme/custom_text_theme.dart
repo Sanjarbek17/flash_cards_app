@@ -38,4 +38,9 @@ class CustomTextTheme {
     fontWeight: FontWeight.w500,
     color: CustomColors.primaryColor,
   );
+  static const categoryTitleTextStyle = TextStyle(
+    fontSize: 40,
+    fontWeight: FontWeight.w500,
+    color: CustomColors.white,
+  );
 }

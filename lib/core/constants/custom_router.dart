@@ -19,7 +19,13 @@ class CustomRouter {
       case about:
         return MaterialPageRoute(builder: (_) => const AccountScreen());
       case flashcard:
-        return MaterialPageRoute(builder: (_) => const FlashcardScreen());
+        return MaterialPageRoute(builder: (_) {
+          if (settings.arguments is String) {
+            final title = settings.arguments as String;
+            return FlashcardScreen(title: title);
+          }
+          return const FlashcardScreen(title: 'Flashcards Screen');
+        });
       default:
         return MaterialPageRoute(builder: (_) => const Placeholder());
     }
