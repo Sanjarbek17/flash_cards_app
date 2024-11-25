@@ -15,6 +15,7 @@ class CarouselItemWidget extends StatefulWidget {
 
 class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProviderStateMixin {
   bool isFlipped = false;
+  String text = 'Obvio';
 
   late final AnimationController _controller;
 
@@ -24,6 +25,19 @@ class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProv
       duration: const Duration(milliseconds: 300),
       vsync: this,
     );
+    _controller.addListener(() {
+      if (_controller.value > 0.5) {
+        setState(() {
+          text = 'Anki';
+          isFlipped = true;
+        });
+      } else {
+        setState(() {
+          text = 'Obvio';
+          isFlipped = false;
+        });
+      }
+    });
     super.initState();
   }
 
@@ -35,34 +49,27 @@ class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProv
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        if (isFlipped)
-          AnimatedBuilder(
-            animation: _controller,
-            builder: (context, child) {
-              return Transform.translate(
-                offset: Offset(0, 350 * _controller.value),
-                child: child,
-              );
-            },
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 240,
-              margin: const EdgeInsets.symmetric(horizontal: 5.0),
-              decoration: const BoxDecoration(
-                color: CustomColors.primaryColor,
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-              ),
-              child: Center(
-                child: Text(
-                  'Obvio asldkf',
-                  style: context.categoryTitleTextStyle,
-                ),
-              ),
-            ),
-          ),
-        Container(
+    return InkWell(
+      onTap: () {
+        if (!isFlipped) {
+          _controller.forward();
+        } else {
+          _controller.reverse();
+        }
+      },
+      borderRadius: BorderRadius.circular(30),
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          return Transform(
+            transform: Matrix4.identity()
+              ..setEntry(3, 2, 0.001)
+              ..rotateY(math.pi * _controller.value),
+            alignment: Alignment.center,
+            child: child,
+          );
+        },
+        child: Container(
           width: MediaQuery.of(context).size.width,
           height: 300,
           margin: const EdgeInsets.symmetric(horizontal: 5.0),
@@ -71,52 +78,16 @@ class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProv
             borderRadius: BorderRadius.all(Radius.circular(30)),
           ),
           child: Center(
-            child: Text(
-              'Obvio',
-              style: context.categoryTitleTextStyle,
-            ),
-          ),
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: InkWell(
-            onTap: () {
-              isFlipped ? _controller.reverse() : _controller.forward();
-              setState(() {
-                isFlipped = !isFlipped;
-              });
-            },
-            splashColor: Colors.transparent,
-            child: Container(
-              width: 65,
-              height: 65,
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: CustomColors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 7,
-                    spreadRadius: 2,
-                    offset: Offset(2, 4),
-                  )
-                ],
-              ),
-              child: Transform.flip(
-                flipY: isFlipped,
-                child: Transform.rotate(
-                  angle: -math.pi / 2,
-                  child: const Icon(
-                    Icons.arrow_back_ios_outlined,
-                    color: CustomColors.primaryColor,
-                  ),
-                ),
+            child: Transform.flip(
+              flipX: isFlipped,
+              child: Text(
+                text,
+                style: context.categoryTitleTextStyle,
               ),
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 }

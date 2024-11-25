@@ -20,16 +20,16 @@ class FlashcardScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const SizedBox(height: 20),
+          const SizedBox(height: 40),
           // const Spacer(),
           CarouselSlider(
             options: CarouselOptions(
-              height: 330.0,
-              aspectRatio: 0.5,
+              height: context.height * 0.57,
+              // aspectRatio: 0.5,
               clipBehavior: Clip.none,
               // enlargeFactor: 0.5,
               enlargeCenterPage: true,
-              viewportFraction: 0.75,
+              viewportFraction: 0.88,
               // padEnds: false,
             ),
             items: const [
