@@ -42,7 +42,7 @@ class CustomTextTheme {
     color: CustomColors.primaryColor,
   );
   static const categoryTitleTextStyle = TextStyle(
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: FontWeight.w500,
     color: CustomColors.white,
   );

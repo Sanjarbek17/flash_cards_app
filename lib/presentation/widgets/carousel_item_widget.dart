@@ -42,12 +42,12 @@ class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProv
             animation: _controller,
             builder: (context, child) {
               return Transform.translate(
-                offset: Offset(0, 400 * _controller.value),
+                offset: Offset(0, 350 * _controller.value),
                 child: child,
               );
             },
             child: Container(
-              width: MediaQuery.of(context).size.width * 0.7,
+              width: MediaQuery.of(context).size.width,
               height: 240,
               margin: const EdgeInsets.symmetric(horizontal: 5.0),
               decoration: const BoxDecoration(
@@ -56,14 +56,14 @@ class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProv
               ),
               child: Center(
                 child: Text(
-                  'Obvio',
+                  'Obvio asldkf',
                   style: context.categoryTitleTextStyle,
                 ),
               ),
             ),
           ),
         Container(
-          width: MediaQuery.of(context).size.width * 0.7,
+          width: MediaQuery.of(context).size.width,
           height: 300,
           margin: const EdgeInsets.symmetric(horizontal: 5.0),
           decoration: const BoxDecoration(

@@ -24,14 +24,20 @@ class HomeScreen extends StatelessWidget {
         ),
         title: const Text('Sanjar Saidov'),
         centerTitle: false,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(30),
+            bottomRight: Radius.circular(30),
+          ),
         ),
         flexibleSpace: Container(
           height: 270,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: CustomColors.primaryColor,
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30),
+            ),
           ),
         ),
         bottom: PreferredSize(

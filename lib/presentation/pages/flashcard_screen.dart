@@ -25,9 +25,12 @@ class FlashcardScreen extends StatelessWidget {
           CarouselSlider(
             options: CarouselOptions(
               height: 330.0,
+              aspectRatio: 0.5,
               clipBehavior: Clip.none,
+              // enlargeFactor: 0.5,
               enlargeCenterPage: true,
-              viewportFraction: 0.7,
+              viewportFraction: 0.75,
+              // padEnds: false,
             ),
             items: const [
               CarouselItemWidget(),

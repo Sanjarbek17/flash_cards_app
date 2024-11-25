@@ -36,14 +36,14 @@ class _AccountScreenState extends State<AccountScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
-          ),
-        ),
         flexibleSpace: Container(
           height: 270,
-          decoration: BoxDecoration(color: CustomColors.primaryColor, borderRadius: BorderRadius.circular(30)),
+          decoration: const BoxDecoration(
+            color: CustomColors.primaryColor,
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(30),
+            ),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -55,43 +55,35 @@ class _AccountScreenState extends State<AccountScreen> {
               const SizedBox(height: 10),
               Text('Sanjar Saidov', style: context.accountTextStyle),
               Text('Samarkand, Uzbekistan', style: context.accountSubTextStyle),
-            ],
-          ),
-        ),
-        bottom: PreferredSize(
-          preferredSize: const Size(double.infinity, 200),
-          child: Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Container(
-                  width: context.width,
-                  padding: const EdgeInsets.all(30),
-                  decoration: BoxDecoration(color: CustomColors.white, borderRadius: BorderRadius.circular(30), boxShadow: const [BoxShadow(color: Colors.black38, blurRadius: 8, spreadRadius: 0, offset: Offset(0, 5))]),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      const Expanded(
-                        flex: 10,
-                        child: FlashWidget(icon: Icons.flash_on, title: '37', subTitle: 'Flashcards Added'),
-                      ),
-                      const SizedBox(width: 20),
-                      Container(
-                        width: 1,
-                        height: 41,
-                        color: CustomColors.primaryColor.withOpacity(0.5),
-                      ),
-                      const SizedBox(width: 20),
-                      const Expanded(
-                        flex: 10,
-                        child: FlashWidget(icon: Icons.schedule, title: '122+', subTitle: 'Hours Spent'),
-                      ),
-                    ],
+              Transform.translate(
+                offset: const Offset(0, 60),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  child: Container(
+                    width: context.width,
+                    padding: const EdgeInsets.all(30),
+                    decoration: BoxDecoration(color: CustomColors.white, borderRadius: BorderRadius.circular(30), boxShadow: const [BoxShadow(color: Colors.black38, blurRadius: 8, spreadRadius: 0, offset: Offset(0, 5))]),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const FlashWidget(icon: Icons.flash_on, title: '37', subTitle: 'Flashcards Added'),
+                        Container(
+                          width: 1,
+                          height: 41,
+                          color: CustomColors.primaryColor.withOpacity(0.5),
+                        ),
+                        const FlashWidget(icon: Icons.schedule, title: '122+', subTitle: 'Hours Spent'),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ],
           ),
+        ),
+        bottom: PreferredSize(
+          preferredSize: Size(context.width, 250),
+          child: const SizedBox(),
         ),
       ),
       body: Column(

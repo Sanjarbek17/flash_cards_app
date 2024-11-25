@@ -1,4 +1,3 @@
-
 import 'package:flash_cards_app/core/extension/text_theme_extension.dart';
 import 'package:flash_cards_app/core/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +21,7 @@ class FlashWidget extends StatelessWidget {
         Icon(
           icon,
           color: CustomColors.primaryColor,
-          size: 30,
+          size: 25,
         ),
         const SizedBox(width: 12),
         Column(
@@ -31,12 +30,6 @@ class FlashWidget extends StatelessWidget {
             Text(title, style: context.flashTextStyle),
             Text(subTitle, style: context.flashSubTextStyle),
           ],
-        ),
-        const Expanded(
-          child: VerticalDivider(
-            color: Colors.red,
-            thickness: 2,
-          ),
         ),
       ],
     );
