@@ -1,14 +1,16 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
-import 'package:flash_cards_app/core/constants/custom_router.dart';
 import 'package:flash_cards_app/core/extension/text_theme_extension.dart';
 import 'package:flash_cards_app/core/theme/custom_colors.dart';
 import 'package:flash_cards_app/gen/assets.gen.dart';
+import 'package:flash_cards_app/presentation/pages/flashcard_screen.dart';
 import 'package:flash_cards_app/presentation/widgets/category_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  static const String routeName = '/home';
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +126,7 @@ class HomeScreen extends StatelessWidget {
                 icon: const Icon(Icons.calculate, color: CustomColors.primaryColor, size: 50),
                 title: 'Mathematics',
                 onTap: () {
-                  Navigator.of(context).pushNamed(CustomRouter.flashcard);
+                  Navigator.of(context).pushNamed(FlashcardScreen.routeName);
                 },
               ),
             ),

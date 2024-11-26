@@ -1,8 +1,9 @@
-import 'package:flash_cards_app/core/extension/text_theme_extension.dart';
+import 'dart:math' as math;
+
 import 'package:flash_cards_app/core/theme/custom_colors.dart';
 import 'package:flutter/material.dart';
 
-import 'dart:math' as math;
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class CarouselItemWidget extends StatefulWidget {
   const CarouselItemWidget({
@@ -15,7 +16,7 @@ class CarouselItemWidget extends StatefulWidget {
 
 class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProviderStateMixin {
   bool isFlipped = false;
-  String text = 'Obvio';
+  String text = '## Obvio';
 
   late final AnimationController _controller;
 
@@ -33,7 +34,7 @@ class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProv
         });
       } else {
         setState(() {
-          text = 'Obvio';
+          text = '# Obvio *';
           isFlipped = false;
         });
       }
@@ -57,6 +58,7 @@ class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProv
           _controller.reverse();
         }
       },
+      splashColor: Colors.transparent,
       borderRadius: BorderRadius.circular(30),
       child: AnimatedBuilder(
         animation: _controller,
@@ -73,16 +75,26 @@ class _CarouselItemWidgetState extends State<CarouselItemWidget> with TickerProv
           width: MediaQuery.of(context).size.width,
           height: 300,
           margin: const EdgeInsets.symmetric(horizontal: 5.0),
-          decoration: const BoxDecoration(
-            color: CustomColors.primaryColor,
-            borderRadius: BorderRadius.all(Radius.circular(30)),
+          decoration: BoxDecoration(
+            color: CustomColors.white,
+            boxShadow: [
+              BoxShadow(
+                color: CustomColors.black.withOpacity(0.5),
+                offset: const Offset(0, 4),
+                blurRadius: 10,
+              ),
+            ],
+            borderRadius: const BorderRadius.all(Radius.circular(30)),
           ),
           child: Center(
             child: Transform.flip(
               flipX: isFlipped,
-              child: Text(
-                text,
-                style: context.categoryTitleTextStyle,
+              child: Markdown(
+                data: text,
+                // styleSheet: MarkdownStyleSheet(
+                //   h1: context.headline1,
+                //   p: context.headline1,
+                // ),
               ),
             ),
           ),

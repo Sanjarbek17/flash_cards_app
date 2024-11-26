@@ -9,6 +9,8 @@ class FlashcardScreen extends StatelessWidget {
   final String title;
   const FlashcardScreen({super.key, required this.title});
 
+  static const String routeName = '/flashcard';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +26,12 @@ class FlashcardScreen extends StatelessWidget {
           // const Spacer(),
           CarouselSlider(
             options: CarouselOptions(
-              height: context.height * 0.57,
+              height: context.height * 0.5,
               // aspectRatio: 0.5,
               clipBehavior: Clip.none,
               // enlargeFactor: 0.5,
               enlargeCenterPage: true,
-              viewportFraction: 0.88,
+              viewportFraction: 0.8,
               // padEnds: false,
             ),
             items: const [

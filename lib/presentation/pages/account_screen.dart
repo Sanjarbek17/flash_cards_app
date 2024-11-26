@@ -8,6 +8,8 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
 
+  static const String routeName = '/about';
+
   @override
   State<AccountScreen> createState() => _AccountScreenState();
 }
@@ -37,7 +39,7 @@ class _AccountScreenState extends State<AccountScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         flexibleSpace: Container(
-          height: 270,
+          height: 350,
           decoration: const BoxDecoration(
             color: CustomColors.primaryColor,
             borderRadius: BorderRadius.vertical(
@@ -55,40 +57,39 @@ class _AccountScreenState extends State<AccountScreen> {
               const SizedBox(height: 10),
               Text('Sanjar Saidov', style: context.accountTextStyle),
               Text('Samarkand, Uzbekistan', style: context.accountSubTextStyle),
-              Transform.translate(
-                offset: const Offset(0, 60),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Container(
-                    width: context.width,
-                    padding: const EdgeInsets.all(30),
-                    decoration: BoxDecoration(color: CustomColors.white, borderRadius: BorderRadius.circular(30), boxShadow: const [BoxShadow(color: Colors.black38, blurRadius: 8, spreadRadius: 0, offset: Offset(0, 5))]),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const FlashWidget(icon: Icons.flash_on, title: '37', subTitle: 'Flashcards Added'),
-                        Container(
-                          width: 1,
-                          height: 41,
-                          color: CustomColors.primaryColor.withOpacity(0.5),
-                        ),
-                        const FlashWidget(icon: Icons.schedule, title: '122+', subTitle: 'Hours Spent'),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
         bottom: PreferredSize(
-          preferredSize: Size(context.width, 250),
-          child: const SizedBox(),
+          preferredSize: Size(context.width, 170),
+          child: Transform.translate(
+            offset: const Offset(0, 50),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Container(
+                width: context.width,
+                padding: const EdgeInsets.all(30),
+                decoration: BoxDecoration(color: CustomColors.white, borderRadius: BorderRadius.circular(30), boxShadow: const [BoxShadow(color: Colors.black38, blurRadius: 8, spreadRadius: 0, offset: Offset(0, 5))]),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const FlashWidget(icon: Icons.flash_on, title: '37', subTitle: 'Flashcards Added'),
+                    Container(
+                      width: 1,
+                      height: 41,
+                      color: CustomColors.primaryColor.withOpacity(0.5),
+                    ),
+                    const FlashWidget(icon: Icons.schedule, title: '122+', subTitle: 'Hours Spent'),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ),
       ),
       body: Column(
         children: [
-          const SizedBox(height: 50),
+          const SizedBox(height: 80),
           Text('6 hrs, 16 Mins', style: context.accountBodyTextStyle),
           Text('Today', style: context.accountBodySubTextStyle),
           SizedBox(

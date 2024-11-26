@@ -9,4 +9,6 @@ class CustomColors {
   static const Color gridColor = Color(0x3E011936);
 
   static const Color white = Colors.white;
+
+  static const Color black = Colors.black;
 }

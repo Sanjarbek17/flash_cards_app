@@ -1,10 +1,13 @@
 import 'package:flash_cards_app/core/theme/custom_colors.dart';
 import 'package:flash_cards_app/presentation/pages/account_screen.dart';
+import 'package:flash_cards_app/presentation/pages/add_screen.dart';
 import 'package:flash_cards_app/presentation/pages/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppView extends StatefulWidget {
   const AppView({super.key});
+
+  static const String routeName = '/';
 
   @override
   State<AppView> createState() => _AppViewState();
@@ -25,17 +28,22 @@ class _AppViewState extends State<AppView> {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: const BoxDecoration(
-          color: CustomColors.white,
-          shape: BoxShape.circle,
-          boxShadow: [BoxShadow(color: Colors.grey, spreadRadius: 1, blurRadius: 30, offset: Offset(0, 1))],
-        ),
+      floatingActionButton: InkWell(
+        onTap: () {
+          Navigator.of(context).pushNamed(AddScreen.routeName);
+        },
         child: Container(
           padding: const EdgeInsets.all(10),
-          decoration: const BoxDecoration(shape: BoxShape.circle, color: CustomColors.primaryColor),
-          child: const Icon(Icons.add, color: CustomColors.white, size: 40),
+          decoration: const BoxDecoration(
+            color: CustomColors.white,
+            shape: BoxShape.circle,
+            boxShadow: [BoxShadow(color: Colors.grey, spreadRadius: 1, blurRadius: 30, offset: Offset(0, 1))],
+          ),
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(shape: BoxShape.circle, color: CustomColors.primaryColor),
+            child: const Icon(Icons.add, color: CustomColors.white, size: 40),
+          ),
         ),
       ),
       bottomNavigationBar: InkWell(
